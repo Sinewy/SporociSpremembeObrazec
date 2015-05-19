@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Obrazec za vpis in sporočanje sprememb</title>
+    <link rel="stylesheet" type="text/css" href="css/cssreset.css">
+    <link rel="stylesheet" type="text/css" href="fonts/style_wb.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="js/vendor/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/mainScript.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Obrazec za vpis in sporočanje sprememb</h1>
+    <hr>
+</header>
+
+<article>
+    <form action="thankYou.html" method="POST">
+        <fieldset>
+            <!--<legend>Registration Form / Create New Account</legend>-->
+            <div class="selectPersonType">
+                <h2>Prosimo izberite za koga zelite sporociti podatke</h2>
+                <!--<input type="hidden" id="personPersonal" name="personType" value="fizicna">-->
+                <div id="personPersonalBtn" class="button notSelected">Fizicna oseba</div>
+                <div id="personBusinessBtn" class="button notSelected">Pravna oseba</div>
+                <input type="hidden" id="personType" name="personType" value="">
+                <div class="infoMessage">
+                    <p>NE, hvala. Podatke bom sporočil po klasični pošti preko obrazca: </p>
+                    <p><a href="#">Obrazec za vpis ali spremembo podatkov v TIS in drugih imenikih TSmedia (.pdf, velikost 547 kB)</a></p>
+                </div>
+                <hr class="lineMarginTop">
+            </div>
+
+            <div class="selectActionType hidden">
+                <h2>Prosimo izberite zeleni postopek</h2>
+                <div id="newDataBtn" class="button notSelected">Vpis v imenik</div>
+                <div id="updateDataBtn" class="button notSelected">Zelim spremeniti podatke</div>
+                <input type="hidden" id="actionType" name="actionType" value="">
+                <hr class="lineMarginBottom">
+            </div>
+
+            <!--Fizicna oseba-->
+            <div class="formNewData hidden">
+                <input type="text" id="firstName" name="firstName" size="50" value="" placeholder="Ime (Obvezno)" />
+                <input type="text" id="lastName" name="lastName" size="50" value="" placeholder="Priimek (Obvezno)" />
+                <input type="text" id="cityNumber" name="cityNumber" size="50" value="" placeholder="Postna stevilka in kraj poste (Obvezno)" />
+                <input type="text" id="city" name="city" size="50" value="" placeholder="Kraj (Obvezno)" />
+                <input type="text" id="street" name="street" size="50" value="" placeholder="Ulica in hisna stevilka (Obvezno)" />
+
+                <h3>Vpisite kontaktne podatke, ki jih zelite objaviti</h3>
+                <input type="text" id="phoneNumbers" name="phoneNumbers" size="50" value="" placeholder="Telefon (Obvezno)" />
+                <input type="text" id="email" name="email" size="50" value="" placeholder="E-posta" />
+
+                <h3>Izberite vrsto objave v imenuku in oznacite status prepovedi klicev</h3>
+
+                <select id="whereToPublish" name="whereToPublish">
+                    <option value="0" selected>Vpis v vse imenike TSmedie</option>
+                    <option value="1">Samo ITIS</option>
+                    <option value="2">Samo 1188</option>
+                    <option value="3">Samo Najdi.si</option>
+                </select>
+                <div class="infoIcon" id="moreInfoPublishing">
+                    <a href="#" class="tooltip">
+                        <img src="images/infoIcon.png">
+                            <p class="publish">Vpis: prosimo, označite, ali želite objaviti svojo telefonsko številko v vseh imenikih TSmedie, zgolj na 1188, ali objave ne želite.</p>
+                    </a>
+                </div>
+
+                <select id="callModes" name="callModes">
+                    <option value="0" selected>Izberite ce zelite omejitev...</option>
+                    <option value="2">v komercialne namene</option>
+                    <option value="1">v raziskovalne namene</option>
+                    <option value="3">v komercialne in raziskovalne namene</option>
+                </select>
+                <div class="infoIcon" id="moreInfoCallModes">
+                    <a href="#" class="tooltip">
+                        <img src="images/infoIcon.png">
+                        <p class="callMode">Prepoved klicev: Vas nadlegujejo razni anketarji in prodajalci izdelkov po telefonu, iskalci vaših mnenj? Naredite temu konec! Odločite se za prepoved klicev v komercialni ali raziskovalni namen ali za kar oba. Več o tem na http://www.itis.si/prepoved_klicev.</p>
+                    </a>
+                </div>
+
+                <hr class="lineMarginTop lineMarginBottom">
+
+                <h3>Vpisite ali preverite pravilnost e-poste, da vam bomo lahko poslali potrditev o vpisu</h3>
+                <div class="checkYourData">
+                    <div class="inputFields">
+                        <input type="text" id="email2" name="email2" size="50" value="" placeholder="E-naslov (Obvezno)" /><br>
+                        <input type="text" id="comment" name="comment" size="50" value="" placeholder="Opomba" /><br>
+                        <input type="checkbox" id="iAgree" name="iAgree" value="true" />
+                        <label for="iAgree">Strinjam se s splošnimi pogoji o uporabi Telefonskega imenika Slovenije na raznih medijih, ki so objavljeni na spletni strani
+                            <a href="#">http://www.tsmedia.si/splosni-pogoji/</a></label>
+                    </div>
+                    <div class="infoText">
+                        <h4>Opozorilo</h4>
+                        <p>V primeru nedovoljenega klica si zapišite predvsem kdaj in zakaj ter posredujte prijavo Tržnemu inšpektoratu RS.Prijavo lahko oddate tukaj!</p>
+                        <p>Link na Uradni list ZEKOM-1 (150, 232 člen) lahko preberete tukaj!</p>
+                        <p>Mnenje informacijske pooblaščenke lahko najdete tukaj!</p>
+
+                        <h4>Pomoc pri izpolnjevanju</h4>
+                        <p>T: 080 15 70 (delovnik 8:00 do 15:00 ure)</p>
+                        <p>E: imenik@tsmedia.si</p>
+                    </div>
+                </div>
+
+                <p> .. </p>
+            </div>
+
+            <div class="formUpdateData hidden">
+                <p> .. </p>
+            </div>
+
+
+            <div class="buttons hidden">
+                <input type="hidden" name="submitted" value="TRUE" />
+                <a href="index.php"><div class="button">Cancel / Login page</div></a>
+                <input class="button" type="submit" value="Register" />
+            </div>
+        </fieldset>
+    </form>
+</article>
+
+<footer><p>© TSmedia 2015</p></footer>
+<!--<?php echo date("Y"); ?>-->
+
+</body>
+</html>
