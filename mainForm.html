@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Obrazec za vpis in sporočanje sprememb</title>
+    <link rel="stylesheet" type="text/css" href="css/cssreset.css">
+    <link rel="stylesheet" type="text/css" href="fonts/style_wb.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <script type="text/javascript" src="js/vendor/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="js/mainScript.js"></script>
+</head>
+
+<body>
+
+<header>
+    <h1>Obrazec za vpis in sporočanje sprememb</h1>
+    <hr>
+</header>
+
+<article>
+    <form action="thankYou.html" method="POST">
+        <fieldset>
+            <div class="selectPersonType">
+                <h2>Prosimo izberite za koga želite sporočiti podatke</h2>
+                <div id="personPersonalBtn" class="button notSelected">Fizična oseba</div>
+                <div id="personBusinessBtn" class="button notSelected">Pravna oseba</div>
+                <input type="hidden" id="personType" name="personType" value="">
+                <div class="infoMessage">
+                    <p>NE, hvala. Podatke bom sporočil po klasični pošti preko obrazca: </p>
+                    <p><a href="#">Obrazec za vpis ali spremembo podatkov v TIS in drugih imenikih TSmedia (.pdf, velikost 547 kB)</a></p>
+                </div>
+                <hr class="lineMarginTop">
+            </div>
+
+            <div class="selectActionType hidden">
+                <h2>Prosimo izberite želeni postopek</h2>
+                <div id="newDataBtn" class="button notSelected">Vpis v imenik</div>
+                <div id="updateDataBtn" class="button notSelected">Želim spremeniti podatke</div>
+                <input type="hidden" id="actionType" name="actionType" value="">
+                <hr class="lineMarginBottom">
+            </div>
+
+            <!--Fizicna oseba - VPIS -->
+            <div id="formNewDataPerson" class="formData hidden"></div>
+            <!--Fizicna oseba - SPREMEMBA -->
+            <div id="formUpdateDataPerson" class="formData hidden"></div>
+
+            <!--Pravna oseba-->
+            <div id="formDataBusiness" class="formData hidden"></div>
+
+            <div class="buttons hidden">
+                <input type="hidden" name="submitted" value="TRUE" />
+                <a href="index.php"><div class="button">Cancel / Login page</div></a>
+                <input class="button" type="submit" value="Register" />
+            </div>
+        </fieldset>
+    </form>
+</article>
+
+<footer class="sticky"><p>© TSmedia 2015</p></footer>
+<!--<?php echo date("Y"); ?>-->
+
+</body>
+</html>
