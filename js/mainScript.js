@@ -91,7 +91,8 @@ $(document).ready(function() {
                 $("#formUpdateDataPerson").load("formUpdateDataPerson.html #theForm", function() {
                     $("#formUpdateDataPerson").fadeIn();
                     $("#formUpdateDataPerson").removeClass("hidden");
-
+                    disableFormFields4Business();
+                    addButtonFuctionality4Business();
                 });
             });
             if($("footer").hasClass("sticky")) {
@@ -166,17 +167,40 @@ $(document).ready(function() {
             if($("#businessUnit option:eq(0)").prop("selected")) {
                 $("#mainFormBusiness").children().prop("disabled", true);
                 $("#workFields").children().prop("disabled", true);
+                $(".inputFields").children().prop("disabled", true);
+                $("#iAgree").prop("disabled", true);
             } else {
                 $("#mainFormBusiness").children().prop("disabled", false);
                 $("#workFields").children().prop("disabled", false);
+                $(".inputFields").children().prop("disabled", false);
+                $("#iAgree").prop("disabled", false);
             }
         });
+    }
+
+    function addButtonFuctionality4Business() {
+        $("#searchForPhoneNumber").click(function() {
+            if($("#phoneNumber").val() != "") {
+                $("#mainFormBusiness").children().prop("disabled", false);
+                $("#iAgree").prop("disabled", false);
+                $(".inputFields").children().prop("disabled", false);
+            }
+        });
+
     }
 
     function disableFormFields() {
         $("#businessUnit").prop("disabled", true);
         $("#mainFormBusiness").children().prop("disabled", true);
         $("#workFields").children().prop("disabled", true);
+        $(".inputFields").children().prop("disabled", true);
+        $("#iAgree").prop("disabled", true);
+    }
+
+    function disableFormFields4Business() {
+        $("#mainFormBusiness").children().prop("disabled", true);
+        $("#iAgree").prop("disabled", true);
+        $(".inputFields").children().prop("disabled", true);
     }
 
     function prepareNewWorkField(num) {

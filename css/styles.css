@@ -79,6 +79,9 @@ h1, h2, h3, h4, h5 {
 p {
     /*margin-bottom: 1.2em;*/
 }
+strong {
+    font-weight: 600;
+}
 
 a {
     color: #00A1E4;
@@ -106,6 +109,7 @@ textarea {
     }
     textarea {
         font-size: 1.1em;
+        font: normal normal normal 13.3333330154419px/normal Arial;
         line-height: 1.5em;
     }
 
@@ -135,6 +139,15 @@ button, input[type="submit"], .button {
 }
     .notSelected {
         background: #505050;
+    }
+    .input450px {
+        width: 450px;
+    }
+    .input350px {
+        width: 350px;
+    }
+    .input430px {
+        width: 430px;
     }
 
     button:hover,
